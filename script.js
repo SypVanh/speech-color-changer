@@ -113,7 +113,7 @@ recognition.onerror = function (event) {
   diagnostic.textContent = "Error occurred in recognition: " + event.error;
 };
 
-recognition.onend = () => {
+recognition.onspeechend = () => {
   isRecognizing = true;
   recognition.start();
 };
