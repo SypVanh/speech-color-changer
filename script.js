@@ -103,7 +103,7 @@ recognition.onresult = function (event) {
 };
 
 recognition.onnomatch = function (event) {
-  diagnostic.textContent = "I didn't recognise that color.";
+  diagnostic.textContent = "I didn't recognise that color. " + event;
 };
 
 recognition.onerror = function (event) {
