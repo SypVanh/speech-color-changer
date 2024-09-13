@@ -92,6 +92,7 @@ document.body.onclick = function () {
 };
 
 recognition.onresult = function (event) {
+  console.log(event);
   var color = event.results[0][0].transcript;
   diagnostic.textContent = "Result received: " + color + ".";
   if (!typeof color == "string") {
@@ -103,7 +104,9 @@ recognition.onresult = function (event) {
 };
 
 recognition.onnomatch = function (event) {
-  diagnostic.textContent = "I didn't recognise that color. " + event;
+  diagnostic.textContent =
+    "I didn't recognize that color. Event details: " +
+    event.results[0][0].transcript;
 };
 
 recognition.onerror = function (event) {
